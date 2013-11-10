@@ -1,0 +1,4 @@
+sdk
+===
+
+SnapBundle SDK
