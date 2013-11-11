@@ -38,6 +38,8 @@ public enum EntityReferenceType
     Metadata("MetadataEntity"),
     Tag("TagEntity"),
 
+    Event("EventEntity"),
+
     Extension("Extension"),
     ExtensionScreenShot("ExtensionScreenShot");
 
