@@ -30,9 +30,9 @@ import java.util.logging.Logger;
  * to help the developer visualize and debug the actual WHERE clause that is being generated from
  * their SearchCriteria class.
  */
-public class SearchAssembly
+public class ObjectInteractionSearchAssembly
 {
-    private static final Logger logger = Logger.getLogger(SearchAssembly.class.getName());
+    private static final Logger logger = Logger.getLogger(ObjectInteractionSearchAssembly.class.getName());
 
     protected SearchCriteria criteria;
 
@@ -42,7 +42,7 @@ public class SearchAssembly
 
     private boolean wasAssembled = false;
 
-    public SearchAssembly(SearchCriteria criteria)
+    public ObjectInteractionSearchAssembly(SearchCriteria criteria)
     {
         this.criteria = criteria;
     }

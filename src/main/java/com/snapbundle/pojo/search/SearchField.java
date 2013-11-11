@@ -35,6 +35,8 @@ public enum SearchField
 
     DeviceIdentification("identification"),
 
+    EventType("eventType"),
+
     ObjectType("objectType"),
     SessionType("sessionType"),
     DeviceType("deviceType"),

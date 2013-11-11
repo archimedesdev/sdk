@@ -30,27 +30,66 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SearchCriteria
+public final class SearchCriteria
 {
-    private static List<EntityReferenceType> supportedReferenceTypes = new ArrayList<>();
+    private static Map<EntityReferenceType, List<EntityReferenceType>> supportedReferenceTypesMap = new HashMap<>();
 
     static
     {
-        // TODO: Add support for Tag, File, and Metadata as applicable
-        supportedReferenceTypes.add(EntityReferenceType.Device);
-        supportedReferenceTypes.add(EntityReferenceType.Object);
-        supportedReferenceTypes.add(EntityReferenceType.ObjectInteraction);
-        supportedReferenceTypes.add(EntityReferenceType.ObjectInteractionSession);
-        supportedReferenceTypes.add(EntityReferenceType.User);
+        List<EntityReferenceType> objectInteractionSupportedTypes = new ArrayList<>();
+        objectInteractionSupportedTypes.add(EntityReferenceType.ObjectInteraction);
+        objectInteractionSupportedTypes.add(EntityReferenceType.Device);
+        objectInteractionSupportedTypes.add(EntityReferenceType.Object);
+        objectInteractionSupportedTypes.add(EntityReferenceType.ObjectInteractionSession);
+        objectInteractionSupportedTypes.add(EntityReferenceType.User);
+
+        supportedReferenceTypesMap.put(EntityReferenceType.ObjectInteraction, objectInteractionSupportedTypes);
+
+        List<EntityReferenceType> eventSupportedType = new ArrayList<>();
+        eventSupportedType.add(EntityReferenceType.Event);
+        eventSupportedType.add(EntityReferenceType.User);
+
+        supportedReferenceTypesMap.put(EntityReferenceType.Event, eventSupportedType);
+
+        List<EntityReferenceType> userSupportedTypes = new ArrayList<>();
+        userSupportedTypes.add(EntityReferenceType.User);
+        userSupportedTypes.add(EntityReferenceType.Tag);
+        userSupportedTypes.add(EntityReferenceType.Metadata);
+        userSupportedTypes.add(EntityReferenceType.File);
+
+        supportedReferenceTypesMap.put(EntityReferenceType.User, userSupportedTypes);
+
+        List<EntityReferenceType> objectSupportedTypes = new ArrayList<>();
+        objectSupportedTypes.add(EntityReferenceType.Object);
+        objectSupportedTypes.add(EntityReferenceType.Tag);
+        objectSupportedTypes.add(EntityReferenceType.Metadata);
+        objectSupportedTypes.add(EntityReferenceType.File);
+
+        supportedReferenceTypesMap.put(EntityReferenceType.Object, objectSupportedTypes);
     }
+
+    protected EntityReferenceType target;
 
     protected Map<EntityReferenceType, SearchClause> criteriaMap = new HashMap<>();
 
     protected int limit;
 
-    public static SearchCriteria newInstance()
+    protected OrderBy orderBy;
+
+    protected SearchCriteria()
     {
-        return new SearchCriteria();
+    }
+
+    public SearchCriteria(EntityReferenceType target)
+    {
+        this.target = target;
+    }
+
+    public static SearchCriteria newInstance(EntityReferenceType entityReferenceType)
+    {
+        Preconditions.checkArgument(supportedReferenceTypesMap.containsKey(entityReferenceType),
+                "EntityReferenceType is not supported as a primary search focus");
+        return new SearchCriteria(entityReferenceType);
     }
 
     public static SearchCriteria fromJson(String json) throws IOException
@@ -58,6 +97,11 @@ public class SearchCriteria
         ObjectMapper mapper = new ObjectMapper();
         mapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
         return mapper.readValue(json, SearchCriteria.class);
+    }
+
+    public EntityReferenceType getTarget()
+    {
+        return target;
     }
 
     public Map<EntityReferenceType, SearchClause> getCriteriaMap()
@@ -79,9 +123,15 @@ public class SearchCriteria
     public SearchCriteria addCriteria(EntityReferenceType entityReferenceType, SearchClause searchClause)
     {
         Preconditions.checkArgument(!criteriaMap.containsKey(entityReferenceType), "Search Criteria already contains a search clause for " + entityReferenceType.name());
-        Preconditions.checkArgument(supportedReferenceTypes.contains(entityReferenceType), "Search Criteria doesn't support entity reference type " + entityReferenceType);
+        Preconditions.checkArgument(supportedReferenceTypesMap.get(target).contains(entityReferenceType), "Search Criteria doesn't support entity reference type " + entityReferenceType);
 
         criteriaMap.put(entityReferenceType, searchClause);
+        return this;
+    }
+
+    public SearchCriteria setOrderBy(OrderBy orderBy)
+    {
+        this.orderBy = orderBy;
         return this;
     }
 

@@ -30,33 +30,39 @@ public class SearchExample
 {
     public static void main(String[] args) throws IOException
     {
-final long WITHIN_LAST_WEEK = System.currentTimeMillis() - TimeUnit.DAYS.toDays(7);
+        createObjectInteractionQuery();
+    }
 
-String json = new SearchCriteria()
-.addCriteria(EntityReferenceType.User,
-        SearchClause.newInstance()
-                .field(SearchField.EmailAddress)
-                .is(SearchPredicate.STARTS_WITH)
-                .value("foo"))
-.addCriteria(EntityReferenceType.Device,
-        SearchClause.newInstance()
-                .field(SearchField.DeviceIdentification)
-                .is(SearchPredicate.EQUALS)
-                .value(123456))
-.addCriteria(EntityReferenceType.Object,
-        SearchClause.newInstance()
-                .field(SearchField.ReceivedTimestamp)
-                .is(SearchPredicate.AFTER)
-                .value(WITHIN_LAST_WEEK))
-.setLimit(5)
-.toJson();
+    private static void createObjectInteractionQuery() throws IOException
+    {
+        final long WITHIN_LAST_WEEK = System.currentTimeMillis() - TimeUnit.DAYS.toDays(7);
+
+        String json = SearchCriteria.newInstance(EntityReferenceType.ObjectInteraction)
+                .addCriteria(EntityReferenceType.User,
+                        SearchClause.newInstance()
+                                .field(SearchField.EmailAddress)
+                                .is(SearchPredicate.STARTS_WITH)
+                                .value("foo"))
+                .addCriteria(EntityReferenceType.Device,
+                        SearchClause.newInstance()
+                                .field(SearchField.DeviceIdentification)
+                                .is(SearchPredicate.EQUALS)
+                                .value(123456))
+                .addCriteria(EntityReferenceType.Object,
+                        SearchClause.newInstance()
+                                .field(SearchField.ReceivedTimestamp)
+                                .is(SearchPredicate.AFTER)
+                                .value(WITHIN_LAST_WEEK))
+                .setLimit(5)
+                .toJson();
 
         System.out.println(json);
 
-        SearchAssembly assembly = new SearchAssembly(SearchCriteria.fromJson(json));
+        ObjectInteractionSearchAssembly assembly = new ObjectInteractionSearchAssembly(SearchCriteria.fromJson(json));
         assembly.assemble();
         String whereClause = assembly.getWhereClause();
 
         System.out.println(whereClause);
+
     }
 }
