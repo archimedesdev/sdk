@@ -69,7 +69,7 @@ The SnapBundle™ API was designed around four clearly conveyed security domains
 
 * public/
 * admin/
-* secure/
+* app/
 * oauth2/
 
 These physical security domains are intentionally designed as a physical part of the URL structure so there is never any doubt about which domain a call is accessing. 
