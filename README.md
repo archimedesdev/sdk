@@ -1,5 +1,5 @@
 ![alt text](images/snapbundle.png "Title")
-> Powered by **_and_**
+> **__Context is Everything__ (SM)**
 
 ## Overview
 You know those car commercials that satirize the differences between **_and_** and **_or_** in various situations? One commercial starts with a couple in a car discussing style **_and_** high gas mileage. They are laughing about if they only had **_or_**, like "nuts **_or_** bolts." A dream sequence kicks in, and the couple is now standing in front of a huge pool with kids swimming.  The husband looks at his wife and asks innocently "I wonder what all these nuts are for?" Moments later, the whole pool comes apart and a flood of water engulfs everyone. The dream sequence ends, returning back to the couple driving in their hybrid car, excited that they get style **_and_** high gas mileage.  
@@ -8,7 +8,7 @@ You know those car commercials that satirize the differences between **_and_** a
 > Would you rather have a serial number, e.g. a car vehicle identification number (VIN), **_or_** media-rich context, or a VIN **_and_** media-rich context? The SnapBundle™ Platform gives you **_and_** capabilities!
 
 ## Your App _and_ SnapBundle™
-Your app is great. SnapBundle™ will help you make it better. We recognize that you've got paying customers, great reviews in the app store, and a pipeline full of leads. Ask yourself this critical question: Are you a _one hit wonder_ with your customers, or do you incentize them with additional capabilities where they want to come back _and_ give you more money for more capabilities? It's this little known concept called **_Cross-Sell/Up-Sell_** in business parlance. By combining your app _and_ SnapBundle™, you create a cross-sell/up-sell opportunity. Everyone likes more money, right?
+Your app is great. SnapBundle™ will help you make it better. We recognize that you've got paying customers, great reviews in the app store, and a pipeline full of leads. Ask yourself this critical question: Are you a _one hit wonder_ with your customers, or do you incentize them with additional capabilities where they want to come back _and_ give you more money for more capabilities? It's this little known concept called **_Cross-Sell/Up-Sell_** in business parlance. Using SnapBundle™ can increase the _total lifetime value of a customer_, a key business metric. By combining your app _and_ SnapBundle™, you create a cross-sell/up-sell opportunity. Everyone likes more money, right?
 
 The SnapBundle™ platform was built with these core tenets in mind:
 
