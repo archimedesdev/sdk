@@ -1,4 +1,4 @@
-# Welcome to the SnapBundle™ Platform
+![alt text](images/snapbundle.png "Title")
 > Powered by **_and_**
 
 ## Overview
