@@ -90,5 +90,8 @@ The OAuth 2.0 security domain is used strictly by Extension objects that are ini
 
 > The production base URL for the REST API is **https://snapbundle.tagdynamics.net/v1/**
 
+### Licensing
+The SnapBundle™ Platform is a licensed technology. Different license plans are available. If an API call is with an unlicensed operation request, an [HTTP error code 412, _Precondition Failed_](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.13 "RFC - 10.4.13 412 Precondition Failed"), will be returned to the caller.
+
 ### Support
 The fastest way to obtain support is by using the [snapbundle] tag on Stack Overflow. The Tag Dynamics engineer team monitors and answers questions marked with this tag throughout the day. If you feel a question is too sensitive for the forum, you may alternatively email <engineering@tagdynamics.net>.

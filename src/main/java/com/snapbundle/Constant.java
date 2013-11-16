@@ -139,6 +139,9 @@ public final class Constant
 
     public static final String PERMISSION_TYPE_FIELD = "permissionType";
 
+
+    public static final int ERR_UNLICENSED_FEATURE = -99;
+
     private Constant()
     {
     }

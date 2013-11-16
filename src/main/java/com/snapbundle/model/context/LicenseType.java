@@ -19,7 +19,10 @@ package com.snapbundle.model.context;
 
 public enum LicenseType
 {
-    IndividualFree,
-    IndividualPremium,
-    Enterprise
+    Developer,
+    Shared,
+    Business,
+    Enterprise,
+    OnPrem,
+    OEM
 }
