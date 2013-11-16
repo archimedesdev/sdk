@@ -102,5 +102,11 @@ public enum EventType
     OAuthLoginSuccess,
     OAuthLoginFailure,
     OAuthTokenRefreshed,
-    TokenRevocation
+    TokenRevocation,
+
+    FileAccessed,
+    ObjectAccessed,
+    ObjectAddressAccessed,
+    ObjectInteractionAccessed,
+    ObjectInteractionSessionAccessed
 }
