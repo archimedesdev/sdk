@@ -99,7 +99,7 @@ public final class Constant
 
     public static final String RAW_VALUE = "rawValue";
 
-    public static final String DATA_TYPE_FIELD = "type";
+    public static final String DATA_TYPE_FIELD = "dataType";
 
     public static final String DATA_FIELD = "data";
 
