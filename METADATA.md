@@ -28,9 +28,12 @@ The `Custom` MetaDataType places the onus entirely on the developer to provide a
 
 Endpoint | Supported HTTP Methods | Events Generated
 ------------ | ------------- | ------------
-/public/metadata/mapper/{metadataDataType} | POST  | 
+/public/metadata/mapper/encode/{metadataDataType} | POST  | 
+/public/metadata/mapper/decode/{metadataDataType} | POST  | 
 
-The endpoint is expecting the body of the POST to be `text/plain`, and the response back will be JSON object with a single field, `rawValue` that represents the encoded byte[] that the platform knows how to successfully decode based on the declared metadataDataType.
+The _encode_ endpoint is expecting the body of the POST to be `text/plain`, and the response back will be JSON object with a single field, `rawValue` that represents the encoded byte[] that the platform knows how to successfully decode based on the declared metadataDataType.
+
+The _decode_ endpoint is expecting the body of the POST to be `text/plain`, and the response back will be a JSON object with a single field, `value`, and the value will either be represented in JSON as the appropriate data type (e.g. int, long, Boolean, float, double, String) or in the case of Custom, JSONType, and XML, a String data type.
 
 > If you are building with the SnapBundle™ Java SDK, then you should just use one of the Mapper classes found in the `com.snapbundle.util.mapper` package.
 
