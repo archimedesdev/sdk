@@ -69,6 +69,12 @@ Device types are used to categorize the physical computing platform interacting 
 * Phone
 * Tablet
 * PC
+* Blackberry
+* iPhone
+* iPad
+* Android
+* Kindle
+* Nook
 * Specialized
 * Unknown
 
