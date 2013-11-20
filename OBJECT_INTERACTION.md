@@ -19,7 +19,6 @@ uniqueId | long  | true | false | Restricted | Generated
 urn | String  | true | false | Minimum | Generated
 lastModifiedTimestamp | long   | true | false | Standard | Generated
 moniker | String  | false | true | Standard | null
-object | IObject | true | false | Standard |
 account | IAccount  | true | fase | Full | Generated |
 user | IUser | true | false | Minimum | Generated |
 object | IObject | true | false | Minimum |
