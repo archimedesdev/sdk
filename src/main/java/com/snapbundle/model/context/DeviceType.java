@@ -25,6 +25,13 @@ public enum DeviceType
     Phone,
     Tablet,
     PC,
+    Blackberry,
+    iPhone,
+    iPad,
+    Android,
+    Kindle,
+    Nook,
+    Other,
     /**
      * High-end or custom manufactured device.
      */
